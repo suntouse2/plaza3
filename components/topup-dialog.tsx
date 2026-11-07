@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import {
   DialogHeader,
   DialogTitle,
@@ -22,25 +21,6 @@ type Props = {
   onOpenChange: (open: boolean) => void;
 };
 
-type PayMethod = "sbp" | "card";
-
-const PAY_METHODS: {
-  id: PayMethod;
-  label: string;
-  icon: React.ReactElement;
-}[] = [
-  {
-    id: "sbp",
-    label: "СБП",
-    icon: <Image src="/pay/sbp.svg" alt="СБП" width={40} height={40} />,
-  },
-  {
-    id: "card",
-    label: "Картой",
-    icon: <Image src="/pay/cards.png" alt="Картой" width={30} height={30} />,
-  },
-];
-
 const PRESETS = [500, 1000, 2500, 5000];
 const MIN_AMOUNT = 100;
 const BONUS_RATE = 0.05; // +5% плазмитов
@@ -59,7 +39,6 @@ export default function TopUpDialog({ open, onOpenChange }: Props) {
 
   // Храним сырую строку, чтобы можно было печатать "100." и "100.50"
   const [amount, setAmount] = useState<string>("");
-  const [payMethod, setPayMethod] = useState<PayMethod>("sbp");
   const [loading, setLoading] = useState(false);
 
   const numericAmount = amount === "" ? 0 : Number(amount) || 0;
@@ -109,7 +88,7 @@ export default function TopUpDialog({ open, onOpenChange }: Props) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           amount: Math.round(numericAmount * 100) / 100, // рубли с копейками
-          paymentMethod: payMethod,
+          paymentMethod: "sbp",
         }),
       });
 
@@ -195,36 +174,6 @@ export default function TopUpDialog({ open, onOpenChange }: Props) {
               Минимальная сумма — {MIN_AMOUNT} ₽
             </p>
           )}
-        </div>
-
-        {/* Способ оплаты */}
-        <div className="flex flex-col gap-2">
-          <h4 className="text-sm font-bold">Способ оплаты</h4>
-          <div className="grid grid-cols-2 gap-1.5">
-            {PAY_METHODS.map((m) => {
-              const active = payMethod === m.id;
-              return (
-                <Card
-                  key={m.id}
-                  onClick={() => setPayMethod(m.id)}
-                  className={cn(
-                    "cursor-pointer p-2! bg-white/3! flex flex-col gap-2 items-center justify-center",
-                    active && "bg-white/12!"
-                  )}
-                >
-                  {m.icon}
-                  <span
-                    className={cn(
-                      "text-[11px] font-semibold text-muted",
-                      active && "text-white"
-                    )}
-                  >
-                    {m.label}
-                  </span>
-                </Card>
-              );
-            })}
-          </div>
         </div>
 
         {/* Раскладка */}

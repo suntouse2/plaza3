@@ -29,25 +29,6 @@ type Props = {
   credentials: Credential[];
 };
 
-type PayMethod = "sbp" | "card";
-
-const METHODS: {
-  id: PayMethod;
-  label: string;
-  icon: { src: string; width: number; height: number };
-}[] = [
-  {
-    id: "sbp",
-    label: "СБП",
-    icon: { src: "/pay/sbp.svg", width: 40, height: 24 },
-  },
-  {
-    id: "card",
-    label: "Карта",
-    icon: { src: "/pay/cards.png", width: 34, height: 20 },
-  },
-];
-
 const DEFAULT_HINT =
   "Для пополнения нужны данные вашего аккаунта. Их можно найти в профиле или в настройках игры, в разделе «Мой аккаунт».";
 
@@ -80,7 +61,6 @@ export default function Receipt({
   const [values, setValues] = useState<Record<number, string>>({});
   const [openHint, setOpenHint] = useState<number | null>(null);
   const [promo, setPromo] = useState<string | null>(null);
-  const [method, setMethod] = useState<PayMethod>("sbp");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -111,7 +91,7 @@ export default function Receipt({
           clientId: valueOf("CLIENT_ID") ?? "",
           serverId: valueOf("SERVER_ID") || undefined,
           promo: promo ?? undefined,
-          method,
+          method: "sbp",
         }),
       });
 
@@ -239,45 +219,6 @@ export default function Receipt({
         {/* checkout */}
         <div className="flex flex-col gap-3 rounded-3xl border border-card-border bg-card p-4 sm:gap-4 sm:p-5">
           <PromoInput onValidChange={setPromo} />
-
-          {/* payment method */}
-          <div
-            role="radiogroup"
-            aria-label="Способ оплаты"
-            className="grid grid-cols-2 gap-1 rounded-2xl bg-surface-2 p-1"
-          >
-            {METHODS.map((m) => {
-              const active = method === m.id;
-              return (
-                <button
-                  key={m.id}
-                  type="button"
-                  role="radio"
-                  aria-checked={active}
-                  disabled={isLoading}
-                  onClick={() => setMethod(m.id)}
-                  className={cn(
-                    "flex h-11 items-center justify-center gap-2 rounded-xl text-sm font-semibold transition-colors disabled:opacity-50",
-                    active
-                      ? "bg-background text-foreground shadow-sm"
-                      : "text-muted hover:text-foreground",
-                  )}
-                >
-                  <Image
-                    src={m.icon.src}
-                    alt=""
-                    width={m.icon.width}
-                    height={m.icon.height}
-                    className={cn(
-                      "shrink-0 transition-opacity",
-                      !active && "opacity-60",
-                    )}
-                  />
-                  {m.label}
-                </button>
-              );
-            })}
-          </div>
 
           <div className="num flex flex-col gap-1.5 px-1 text-sm">
             {oldPrice && (

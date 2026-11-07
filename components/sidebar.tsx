@@ -103,7 +103,7 @@ export default function Sidebar({ games }: { games: NavGame[] }) {
                 })}
               </ul>
 
-              <p className="eyebrow mb-2 mt-6 px-1">GameDrop</p>
+              <p className="eyebrow mb-2 mt-6 px-1">GamerPlaza</p>
               <ul className="flex flex-col gap-0.5">
                 {NAV_LINKS.map((l) => (
                   <li key={l.label}>

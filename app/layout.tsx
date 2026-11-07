@@ -20,7 +20,7 @@ const unbounded = Unbounded({
 });
 
 export const metadata: Metadata = {
-  title: "GameDrop — Пополнение игр",
+  title: "GamerPlaza — Пополнение игр",
   description: "Быстрое и безопасное пополнение игровой валюты по UID",
 };
 

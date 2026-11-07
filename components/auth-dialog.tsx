@@ -88,7 +88,7 @@ export default function AuthDialog({ open, onOpenChange }: Props) {
           aria-disabled={state === "loading"}
           href={
             supportLink +
-            "?text=Здравствуйте, я забыл пароль от моего аккаунта GameDrop"
+            "?text=Здравствуйте, я забыл пароль от моего аккаунта GamerPlaza"
           }
           type="button"
           className={`-mt-1 ${

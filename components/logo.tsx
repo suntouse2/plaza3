@@ -26,12 +26,12 @@ export default function Logo({
     <Link
       href="/"
       onClick={onClick}
-      aria-label="GameDrop — на главную"
+      aria-label="GamerPlaza — на главную"
       className={cn("flex shrink-0 items-center gap-2.5", className)}
     >
       <LogoMark />
       <span className="font-display text-[17px] font-semibold tracking-tight text-foreground">
-        GameDrop
+        GamerPlaza
       </span>
     </Link>
   );

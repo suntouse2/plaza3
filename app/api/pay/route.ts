@@ -6,8 +6,7 @@ import { createPayment } from "@/lib/paymentService";
 import { ProductData } from "@/lib/fulfillment";
 import { siteUrl } from "@/data/shared";
 
-const PROJECT_ID = 17;
-const MERCHANTS = { sbp: 42, card: 43 } as const;
+const PROJECT_ID = 19;
 
 const payloadSchema = z.object({
   clientId: z.string(),
@@ -73,7 +72,6 @@ export const POST = async (req: Request) => {
   try {
     const payment = await createPayment({
       projectId: PROJECT_ID,
-      merchantId: MERCHANTS[method],
       shopOrderId: order.id,
       shopOrderPayload: order,
       shopOrderDomain: siteUrl,

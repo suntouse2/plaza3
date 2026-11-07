@@ -56,21 +56,13 @@ export default function Footer() {
             <p>Name: OAK PLAZA LTD · Registration No: HE 443487</p>
             <p>Adress: 18A Demokratias, Lakatamia, 2331, Nicosia, Cyprus</p>
             <p className="mt-2">
-              © {new Date().getFullYear()} GameDrop. Все права защищены. Не
+              © {new Date().getFullYear()} GamerPlaza. Все права защищены. Не
               является официальным сервисом игровых издателей.
             </p>
           </div>
           <div className="flex items-center gap-2">
             <span className="flex h-8 items-center rounded-md border border-card-border bg-surface px-2.5">
               <Image src="/pay/sbp.svg" alt="СБП" width={36} height={18} />
-            </span>
-            <span className="flex h-8 items-center rounded-md border border-card-border bg-surface px-2.5">
-              <Image
-                src="/pay/cards.png"
-                alt="Банковские карты"
-                width={28}
-                height={18}
-              />
             </span>
           </div>
         </div>
