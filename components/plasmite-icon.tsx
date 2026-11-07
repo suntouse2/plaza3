@@ -1,0 +1,37 @@
+"use client";
+
+import { useId } from "react";
+
+/** Заглушка иконки «Плазмита» — замени на финальный арт когда будет */
+export function PlasmiteIcon({ className }: { className?: string }) {
+  const uid = useId();
+  const gradId = `plasmite-grad-${uid}`;
+
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 2c.5 3.5 2.5 5 4.5 6.5S20 12 20 14.5a8 8 0 1 1-16 0c0-2 1-3.5 2.5-5S8 6 9 3c1 1.5 1.5 3 1.5 4.5C11.5 6 12 4 12 2Z"
+        fill={`url(#${gradId})`}
+      />
+      <defs>
+        <linearGradient
+          id={gradId}
+          x1="12"
+          y1="2"
+          x2="12"
+          y2="22"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#e6ff9e" />
+          <stop offset="0.5" stopColor="#c6f24e" />
+          <stop offset="1" stopColor="#8fbf1f" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+}

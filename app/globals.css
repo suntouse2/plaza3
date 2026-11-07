@@ -1,0 +1,283 @@
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+
+/*
+ * GameDrop — дизайн-токены.
+ * Графитовая база, лаймовый акцент. Поверхности различаются
+ * тоном и тонкой границей, а не прозрачностью.
+ */
+:root {
+  /* Фоны */
+  --background: #0b0b0c;
+  --surface: #121214;
+  --surface-2: #18181b;
+  --surface-3: #202024;
+
+  /* Карточки (имена сохранены для совместимости) */
+  --card: #121214;
+  --card-hover: #18181b;
+  --card-border: #232327;
+  --card-border-strong: #34343a;
+  --card-filled: #18181b;
+  --card-filled-hover: #202024;
+  --card-filled-border: #2a2a2f;
+  --card-filled-border-strong: #3a3a41;
+
+  /* Текст */
+  --foreground: #f4f4f5;
+  --muted: #a1a1aa;
+  --subtle: #71717a;
+
+  /* Акцент — лайм */
+  --accent: #c6f24e;
+  --accent-hover: #d4f86f;
+  --accent-strong: #a8d62e;
+  --accent-fg: #0b0b0c;
+  --accent-text: #d4f86f;
+  --accent-soft: rgba(198, 242, 78, 0.1);
+  --accent-border: rgba(198, 242, 78, 0.45);
+  --accent-ring: rgba(198, 242, 78, 0.55);
+  --accent-glow: rgba(198, 242, 78, 0.35);
+
+  /* Статусы */
+  --success: #4ade80;
+  --success-soft: rgba(74, 222, 128, 0.12);
+  --success-border: rgba(74, 222, 128, 0.35);
+  --danger: #f87171;
+  --danger-strong: #ef4444;
+  --info: #60a5fa;
+  --warning: #fbbf24;
+
+  --header-h: 64px;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+
+  --color-card: var(--card);
+  --color-card-hover: var(--card-hover);
+  --color-card-border: var(--card-border);
+  --color-card-border-strong: var(--card-border-strong);
+  --color-card-filled: var(--card-filled);
+  --color-card-filled-hover: var(--card-filled-hover);
+  --color-card-filled-border: var(--card-filled-border);
+  --color-card-filled-border-strong: var(--card-filled-border-strong);
+
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-fg: var(--accent-fg);
+  --color-accent-text: var(--accent-text);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-border: var(--accent-border);
+  --color-accent-ring: var(--accent-ring);
+  --color-accent-glow: var(--accent-glow);
+
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-success-border: var(--success-border);
+  --color-danger: var(--danger);
+  --color-danger-strong: var(--danger-strong);
+  --color-info: var(--info);
+  --color-warning: var(--warning);
+
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-unbounded);
+
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --radius-xl: 12px;
+  --radius-2xl: 14px;
+  --radius-3xl: 18px;
+}
+
+html {
+  color-scheme: dark;
+  scroll-padding-top: calc(var(--header-h) + 16px);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-fg);
+}
+
+/* Заголовки и крупные цифры */
+.font-display {
+  font-family:
+    var(--font-unbounded), var(--font-manrope), system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Цены и суммы — ровные колонки цифр */
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Подпись-лейбл секции */
+.eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--subtle);
+}
+
+/* Тонкий кастомный скроллбар */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--card-border-strong) transparent;
+}
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--card-border-strong);
+  border-radius: 9999px;
+}
+
+/* Скрытый скроллбар, прокрутка работает */
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* Мягкое затухание краёв горизонтальных лент */
+.fade-x {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 16px,
+    #000 calc(100% - 24px),
+    transparent
+  );
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes dialog-overlay-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes dialog-overlay-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes dialog-content-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes dialog-content-out {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+}
+
+.dialog-overlay[data-state="open"] {
+  animation: dialog-overlay-in 180ms ease-out;
+}
+.dialog-overlay[data-state="closed"] {
+  animation: dialog-overlay-out 150ms ease-in forwards;
+}
+.dialog-content[data-state="open"] {
+  animation: dialog-content-in 200ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.dialog-content[data-state="closed"] {
+  animation: dialog-content-out 150ms ease-in forwards;
+}
+
+@keyframes glow-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Полоса прогресса автопрокрутки карусели */
+@keyframes progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-5px);
+  }
+  40% {
+    transform: translateX(5px);
+  }
+  60% {
+    transform: translateX(-3px);
+  }
+  80% {
+    transform: translateX(3px);
+  }
+}
+
+.animate-shake {
+  animation: shake 0.4s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

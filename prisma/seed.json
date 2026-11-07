@@ -1,0 +1,292 @@
+{
+  "products": [
+    {
+      "title": "60 UC",
+      "category": "pubg-mobile",
+      "description": "Активация: Игровой ID",
+      "credentials": ["UID"],
+      "price": 70,
+      "imageSrc": "/products/pubg-mobile/1.webp",
+      "data": {
+        "title": "60",
+        "product_id": "PUBGM_60UC",
+        "user_field": "CharacterID",
+        "category": "topup",
+        "quantity": 1,
+        "rubCost": 72
+      }
+    },
+    {
+      "title": "1800 UC",
+      "category": "pubg-mobile",
+      "description": "Активация: Игровой ID",
+      "credentials": ["UID"],
+      "price": 880,
+      "imageSrc": "/products/pubg-mobile/1.webp",
+      "data": {
+        "title": "60",
+        "product_id": "PUBGM_60UC",
+        "user_field": "CharacterID",
+        "category": "topup",
+        "quantity": 1,
+        "rubCost": 70
+      }
+    },
+    {
+      "title": "2100 UC",
+      "category": "pubg-mobile",
+      "description": "Активация: Игровой ID",
+      "credentials": ["UID"],
+      "price": 990,
+      "imageSrc": "/products/pubg-mobile/1.webp",
+      "data": {
+        "title": "60",
+        "product_id": "PUBGM_60UC",
+        "user_field": "CharacterID",
+        "category": "topup",
+        "quantity": 1,
+        "rubCost": 70
+      }
+    },
+    {
+      "title": "3750 UC",
+      "category": "pubg-mobile",
+      "description": "Активация: Игровой ID",
+      "credentials": ["UID"],
+      "price": 1380,
+      "imageSrc": "/products/pubg-mobile/2.webp",
+      "data": {
+        "title": "60",
+        "product_id": "PUBGM_60UC",
+        "user_field": "CharacterID",
+        "category": "topup",
+        "quantity": 1,
+        "rubCost": 70
+      }
+    },
+    {
+      "title": "6000 UC",
+      "category": "pubg-mobile",
+      "description": "Активация: Игровой ID",
+      "credentials": ["UID"],
+      "price": 1899,
+      "imageSrc": "/products/pubg-mobile/2.webp",
+      "data": {
+        "title": "60",
+        "product_id": "PUBGM_60UC",
+        "user_field": "CharacterID",
+        "category": "topup",
+        "quantity": 1,
+        "rubCost": 70
+      }
+    },
+    {
+      "title": "8100 UC",
+      "category": "pubg-mobile",
+      "description": "Активация: Игровой ID",
+      "credentials": ["UID"],
+      "price": 2290,
+      "imageSrc": "/products/pubg-mobile/2.webp",
+      "data": {
+        "title": "325",
+        "product_id": "PUBGM_325",
+        "user_field": "CharacterID",
+        "category": "topup",
+        "quantity": 1,
+        "rubCost": 70
+      }
+    },
+    {
+      "title": "13500 UC",
+      "category": "pubg-mobile",
+      "description": "Активация: Игровой ID",
+      "credentials": ["UID"],
+      "price": 3205,
+      "imageSrc": "/products/pubg-mobile/3.webp",
+      "data": {
+        "title": "325",
+        "product_id": "PUBGM_325",
+        "user_field": "CharacterID",
+        "category": "topup",
+        "quantity": 1,
+        "rubCost": 70
+      }
+    },
+    {
+      "title": "32400 UC",
+      "category": "pubg-mobile",
+      "description": "Активация: Игровой ID",
+      "credentials": ["UID"],
+      "price": 5999,
+      "imageSrc": "/products/pubg-mobile/3.webp",
+      "data": {
+        "title": "660",
+        "product_id": "PUBGM_660",
+        "user_field": "CharacterID",
+        "category": "topup",
+        "quantity": 1,
+        "rubCost": 70
+      }
+    },
+    {
+      "title": "65990 UC",
+      "category": "pubg-mobile",
+      "description": "Активация: Игровой ID",
+      "credentials": ["UID"],
+      "price": 7599,
+      "imageSrc": "/products/pubg-mobile/3.webp",
+      "data": {
+        "title": "660",
+        "product_id": "PUBGM_660",
+        "user_field": "CharacterID",
+        "category": "topup",
+        "quantity": 1,
+        "rubCost": 70
+      }
+    },
+    {
+      "title": "35",
+      "category": "mobile-legends",
+      "credentials": ["UID", "SERVER_ID"],
+      "price": 58,
+      "imageSrc": "/products/mobile-legends/1.webp",
+      "description": "Активация:игровойIDиServerID",
+      "data": {
+        "title": "35",
+        "product_id": "MLR_32_3_DIAMONDS",
+        "user_field": "UserID",
+        "server_field": "ServerID",
+        "category": 1,
+        "quantity": 1
+      }
+    },
+    {
+      "title": "2195",
+      "category": "mobile-legends",
+      "credentials": ["UID", "SERVER_ID"],
+      "price": 995,
+      "imageSrc": "/products/mobile-legends/2.webp",
+      "description": "Активация:игровойIDиServerID",
+      "data": {
+        "title": "35",
+        "product_id": "MLR_32_3_DIAMONDS",
+        "user_field": "UserID",
+        "server_field": "ServerID",
+        "category": 1,
+        "quantity": 1
+      }
+    },
+    {
+      "title": "3688",
+      "category": "mobile-legends",
+      "credentials": ["UID", "SERVER_ID"],
+      "price": 1485,
+      "imageSrc": "/products/mobile-legends/3.webp",
+      "description": "Активация:игровойIDиServerID",
+      "data": {
+        "title": "55",
+        "product_id": "MLR_50_5_DIAMONDS",
+        "user_field": "UserID",
+        "server_field": "ServerID",
+        "category": 1,
+        "quantity": 1
+      }
+    },
+    {
+      "title": "5532",
+      "category": "mobile-legends",
+      "credentials": ["UID", "SERVER_ID"],
+      "price": 1995,
+      "imageSrc": "/products/mobile-legends/4.webp",
+      "description": "Активация:игровойIDиServerID",
+      "data": {
+        "title": "55",
+        "product_id": "MLR_50_5_DIAMONDS",
+        "user_field": "UserID",
+        "server_field": "ServerID",
+        "category": 1,
+        "quantity": 1
+      }
+    },
+    {
+      "title": "7700",
+      "category": "mobile-legends",
+      "credentials": ["UID", "SERVER_ID"],
+      "price": 3395,
+      "imageSrc": "/products/mobile-legends/5.webp",
+      "description": "Активация:игровойIDиServerID",
+      "data": {
+        "title": "165",
+        "product_id": "MLR_150_15_DIAMONDS",
+        "user_field": "UserID",
+        "server_field": "ServerID",
+        "category": 1,
+        "quantity": 1
+      }
+    },
+    {
+      "title": "9288",
+      "category": "mobile-legends",
+      "credentials": ["UID", "SERVER_ID"],
+      "price": 3985,
+      "imageSrc": "/products/mobile-legends/6.webp",
+      "description": "Активация:игровойIDиServerID",
+      "data": {
+        "title": "165",
+        "product_id": "MLR_150_15_DIAMONDS",
+        "user_field": "UserID",
+        "server_field": "ServerID",
+        "category": 1,
+        "quantity": 1
+      }
+    },
+    {
+      "title": "14590",
+      "category": "mobile-legends",
+      "credentials": ["UID", "SERVER_ID"],
+      "price": 4295,
+      "imageSrc": "/products/mobile-legends/7.webp",
+      "description": "Активация:игровойIDиServerID",
+      "data": {
+        "title": "275",
+        "product_id": "MLR_250_25_DIAMONDS",
+        "user_field": "UserID",
+        "server_field": "ServerID",
+        "category": 1,
+        "quantity": 1
+      }
+    },
+    {
+      "title": "16870",
+      "category": "mobile-legends",
+      "credentials": ["UID", "SERVER_ID"],
+      "price": 4995,
+      "imageSrc": "/products/mobile-legends/8.webp",
+      "description": "Активация:игровойIDиServerID",
+      "data": {
+        "title": "565",
+        "product_id": "MLR_500_65_DIAMONDS",
+        "user_field": "UserID",
+        "server_field": "ServerID",
+        "category": 1,
+        "quantity": 1
+      }
+    },
+    {
+      "title": "48700",
+      "category": "mobile-legends",
+      "credentials": ["UID", "SERVER_ID"],
+      "price": 6995,
+      "imageSrc": "/products/mobile-legends/9.webp",
+      "description": "Активация:игровойIDиServerID",
+      "data": {
+        "title": "565",
+        "product_id": "MLR_500_65_DIAMONDS",
+        "user_field": "UserID",
+        "server_field": "ServerID",
+        "category": 1,
+        "quantity": 1
+      }
+    }
+  ]
+}

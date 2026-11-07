@@ -1,0 +1,168 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+
+enum GamePlatform {
+  MOBILE
+  DESKTOP
+}
+
+enum GameType {
+  GACHA
+  SHOOTER
+  CASUAL
+  MOBS
+  OTHER
+}
+
+model Game {
+  id String @id @default(uuid())
+  slug String @unique
+  
+  title String
+  description String
+  
+  bannerUrl String
+
+  isPopular Boolean @default(false)
+  isNew Boolean @default(false)
+  isFeatured Boolean @default(false)
+  isActive Boolean @default(true)
+  type GameType @default(OTHER)
+  platform GamePlatform @default(MOBILE)
+
+  productCategories GameProductCategory[]
+
+
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum CredentialType {
+  CLIENT_ID
+  SERVER_ID
+  LOGIN
+  PASSWORD
+  NICKNAME
+  EMAIL
+}
+
+model Credential {
+  id Int @id @default(autoincrement())
+  label String
+  placeholder String
+  regex String
+  type CredentialType 
+  isRequired Boolean @default(true)
+
+  instructionHtml String?
+
+  gameProductCategoryId String
+  gameProductCategory GameProductCategory @relation(fields: [gameProductCategoryId], references: [id])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+
+model GameProductCategory {
+  id String @id @default(uuid())
+  title String
+
+  gameId String
+  game Game @relation(fields: [gameId], references: [id])
+
+  credentials Credential[]
+
+  products GameProduct[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt 
+}
+
+model GameProduct {
+  id String @id @default(uuid())
+  categoryId String
+  category GameProductCategory @relation(fields: [categoryId], references: [id])
+
+  title String
+  suffix String
+  imageUrl String
+
+  amount Int @default(1)
+  price Float
+
+  /// Данные для выдачи: { title, product_id, user_field, category, quantity, rubCost }.
+  /// Без product_id — выдача вручную
+  data Json @default("{}")
+  
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model User {
+  id String @id @default(uuid())
+  email String? @unique
+  telegramId String? @unique
+  balance Int @default(0)
+  password String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+
+enum OrderStatus {
+  PENDING
+  PAID
+  COMPLETED
+  FAILED
+}
+
+model Order {
+  id String @id @default(uuid())
+  
+  userId String?
+  productId String
+  productSnapshot Json
+  paymentMethod String
+  status OrderStatus @default(PENDING)
+  paymentId String?
+  paymentUrl String?
+  credentials Json
+  /// Секрет из cookie — по нему /order находит заказ покупателя
+  secret String? @unique
+  /// partner_order_id, отправленный поставщику
+  providerOrderId String? @unique
+  /// Ответ поставщика на создание выдачи
+  providerResponse Json?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+
+enum TopupStatus {
+  PENDING
+  COMPLETED
+}
+
+model Topup {
+  id String @id @default(uuid())
+  userId String
+  /// Сумма в копейках
+  amount Int
+  paymentMethod String
+  status TopupStatus @default(PENDING)
+  paymentId String?
+  paymentUrl String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
