@@ -261,7 +261,7 @@
       "category": "mobile-legends",
       "credentials": ["UID", "SERVER_ID"],
       "price": 4995,
-      "imageSrc": "/products/mobile-legends/8.webp",
+      "imageSrc": "/products/mobile-legends/7.webp",
       "description": "Активация:игровойIDиServerID",
       "data": {
         "title": "565",
@@ -277,7 +277,7 @@
       "category": "mobile-legends",
       "credentials": ["UID", "SERVER_ID"],
       "price": 6995,
-      "imageSrc": "/products/mobile-legends/9.webp",
+      "imageSrc": "/products/mobile-legends/7.webp",
       "description": "Активация:игровойIDиServerID",
       "data": {
         "title": "565",
