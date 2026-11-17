@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Card, Badge, cn } from "@/components/ui";
@@ -23,6 +24,11 @@ import { OrderStatus } from "@/app/generated/prisma/client";
 import { supportLink } from "@/data/shared";
 import OrderRefresher from "@/components/order-refresher";
 import Case from "@/components/case";
+
+export const metadata: Metadata = {
+  title: "Статус заказа | GamerPlaza",
+  robots: { index: false, follow: true },
+};
 
 const OLD_PRICE_MULT = 1.54; // ~ -35%
 

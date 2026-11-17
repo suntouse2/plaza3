@@ -33,7 +33,7 @@ export default function ProductCard({
         {product.imageUrl ? (
           <Image
             src={product.imageUrl}
-            alt={product.title}
+            alt={`${product.title} ${product.suffix}${description ? ` — ${description}` : ""}`}
             fill
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 240px"
             loading={eager ? "eager" : undefined}

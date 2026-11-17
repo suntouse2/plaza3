@@ -1,7 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Card } from "@/components/ui";
 import { ArrowLeft } from "lucide-react";
 import { supportLink } from "@/data/shared";
+
+export const metadata: Metadata = {
+  title: "Правила возврата | GamerPlaza",
+  description:
+    "Правила возврата денежных средств в GamerPlaza: основания, сроки и порядок возврата оплаты за заказы на пополнение игр.",
+  alternates: { canonical: "/refund" },
+};
 
 type Section = {
   title: string;

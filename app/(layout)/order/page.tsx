@@ -1,6 +1,11 @@
+import type { Metadata } from "next";
 import prisma from "@/lib/prisma";
 import { cookies } from "next/headers";
 import { notFound, redirect } from "next/navigation";
+
+export const metadata: Metadata = {
+  robots: { index: false, follow: true },
+};
 
 /** Возврат с оплаты: находим заказ покупателя по секрету из cookie */
 export default async function Order() {

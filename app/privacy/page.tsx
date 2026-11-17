@@ -1,7 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Card } from "@/components/ui";
 import { ArrowLeft } from "lucide-react";
 import { siteUrl, supportLink } from "@/data/shared";
+
+export const metadata: Metadata = {
+  title: "Политика конфиденциальности | GamerPlaza",
+  description:
+    "Политика конфиденциальности GamerPlaza: какие данные мы обрабатываем при пополнении игр, как храним и защищаем информацию пользователей.",
+  alternates: { canonical: "/privacy" },
+};
 
 const DEFINITIONS: { term: string; desc: string }[] = [
   { term: "Политика", desc: "данный документ" },

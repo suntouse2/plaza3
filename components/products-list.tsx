@@ -12,10 +12,12 @@ import { productDiscount } from "@/data/shared";
 
 type Props = {
   game: Game;
+  /** H1 с ключевым запросом, напр. «Донат в PUBG Mobile — пополнение UC» */
+  heading?: string;
   categories: (GameProductCategory & { products: GameProduct[] })[];
 };
 
-export default function ProductsList({ game, categories }: Props) {
+export default function ProductsList({ game, heading, categories }: Props) {
   const filled = categories.filter((c) => c.products.length > 0);
 
   return (
@@ -43,7 +45,7 @@ export default function ProductsList({ game, categories }: Props) {
         <div className="flex min-w-0 flex-col gap-1.5">
           <div className="flex flex-wrap items-center gap-2">
             <h1 className="text-2xl font-extrabold tracking-tight sm:text-3xl">
-              {game.title}
+              {heading ?? game.title}
             </h1>
             <Badge variant="success" size="md">
               <BadgeCheck className="h-3.5 w-3.5" /> Официально
@@ -61,9 +63,9 @@ export default function ProductsList({ game, categories }: Props) {
         <div className="flex flex-col gap-8 pt-4">
           {filled.map((category, ci) => (
             <section key={category.id} className="flex flex-col gap-4">
-              {filled.length > 1 && (
-                <h2 className="text-lg font-bold">{category.title}</h2>
-              )}
+              <h2 className="text-lg font-bold">
+                {category.title} {game.title}
+              </h2>
               <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
                 {category.products
                   .toSorted((a, b) => b.price - a.price)

@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Manrope, Unbounded } from "next/font/google";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_TITLE, SITE_URL } from "@/lib/site";
 import "./globals.css";
 import AuthWrapper from "./auth-wrapper";
 import { Toaster } from "@/components/ui/toast";
@@ -19,9 +20,36 @@ const unbounded = Unbounded({
   display: "swap",
 });
 
+// canonical задаётся на каждой странице отдельно (alternates.canonical) —
+// в корне его ставить нельзя, иначе все страницы унаследуют canonical «/»
 export const metadata: Metadata = {
-  title: "GamerPlaza — Пополнение игр",
-  description: "Быстрое и безопасное пополнение игровой валюты по UID",
+  metadataBase: new URL(SITE_URL),
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  formatDetection: { telephone: false, email: false, address: false },
+  openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    locale: "ru_RU",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  // Коды подтверждения из Яндекс.Вебмастера и Google Search Console
+  verification: {
+    yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION,
+    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
+  },
 };
 
 export const viewport: Viewport = {

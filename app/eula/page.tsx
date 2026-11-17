@@ -1,8 +1,16 @@
+import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { Card } from "@/components/ui";
 import { ArrowLeft } from "lucide-react";
 import { siteUrl, supportLink } from "@/data/shared";
+
+export const metadata: Metadata = {
+  title: "Пользовательское соглашение | GamerPlaza",
+  description:
+    "Пользовательское соглашение GamerPlaza: условия покупки игровой валюты, оформления и выполнения заказов на пополнение игр.",
+  alternates: { canonical: "/eula" },
+};
 
 const BRAND = "GAMERUSH";
 const siteHost = siteUrl.replace(/^https?:\/\//, "").replace(/\/$/, "");
