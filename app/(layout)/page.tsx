@@ -12,6 +12,7 @@ import {
   SeoSteps,
 } from "@/components/seo/seo-content";
 import { HOME_FAQ } from "@/data/seo";
+import { canPurchase } from "@/data/shared";
 import prisma from "@/lib/prisma";
 import { absoluteUrl, jsonLd, SITE_DESCRIPTION, SITE_NAME } from "@/lib/site";
 
@@ -79,7 +80,7 @@ export default async function Page() {
         </p>
       </div>
 
-      <FastReceipt games={games} />
+      <FastReceipt games={games.filter((g) => canPurchase(g.slug))} />
 
       <GameGrid games={games} />
 

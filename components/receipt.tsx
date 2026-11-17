@@ -20,7 +20,11 @@ import {
   cn,
 } from "./ui";
 import PromoInput from "./promo-input";
-import { productDiscount } from "@/data/shared";
+import {
+  canPurchase,
+  PURCHASE_DISABLED_TEXT,
+  productDiscount,
+} from "@/data/shared";
 
 type Props = {
   product: GameProduct;
@@ -68,7 +72,8 @@ export default function Receipt({
   const oldPrice = discount ? product.price / (1 - discount / 100) : null;
 
   const filled = credentials.every((c) => isValid(c, values[c.id]));
-  const canSubmit = filled && !isLoading;
+  const purchasable = canPurchase(game.slug);
+  const canSubmit = purchasable && filled && !isLoading;
 
   const handlePay = async () => {
     if (!canSubmit) return;
@@ -256,7 +261,9 @@ export default function Receipt({
               "num h-12 rounded-2xl bg-success text-base text-accent-fg hover:bg-success/90 sm:h-14",
             )}
           >
-            Оплатить {formatPrice(product.price)}
+            {purchasable
+              ? `Оплатить ${formatPrice(product.price)}`
+              : PURCHASE_DISABLED_TEXT}
           </Button>
 
           {error && (

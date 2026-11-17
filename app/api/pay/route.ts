@@ -4,7 +4,7 @@ import crypto from "crypto";
 import z from "zod";
 import { createPayment } from "@/lib/paymentService";
 import { ProductData } from "@/lib/fulfillment";
-import { siteUrl } from "@/data/shared";
+import { canPurchase, PURCHASE_DISABLED_TEXT, siteUrl } from "@/data/shared";
 
 const PROJECT_ID = 19;
 
@@ -29,6 +29,10 @@ export const POST = async (req: Request) => {
 
   if (!product) {
     return NextResponse.json({ error: "Product not found" }, { status: 404 });
+  }
+
+  if (!canPurchase(product.category.game.slug)) {
+    return NextResponse.json({ error: PURCHASE_DISABLED_TEXT }, { status: 403 });
   }
 
   const label = (type: "CLIENT_ID" | "SERVER_ID", fallback: string) =>
