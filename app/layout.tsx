@@ -49,6 +49,10 @@ export const metadata: Metadata = {
   verification: {
     yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION,
     google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
+    // Подтверждение домена в AuraPay
+    other: {
+      AURAPAY_VXO36QWcNvI6DcBO: "undefined",
+    },
   },
 };
 
