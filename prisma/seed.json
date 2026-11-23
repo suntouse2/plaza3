@@ -5,7 +5,7 @@
       "category": "pubg-mobile",
       "description": "Активация: Игровой ID",
       "credentials": ["UID"],
-      "price": 70,
+      "price": 82,
       "imageSrc": "/products/pubg-mobile/1.webp",
       "data": {
         "title": "60",
@@ -13,7 +13,7 @@
         "user_field": "CharacterID",
         "category": "topup",
         "quantity": 1,
-        "rubCost": 72
+        "rubCost": 70
       }
     },
     {
@@ -148,7 +148,7 @@
       "title": "35",
       "category": "mobile-legends",
       "credentials": ["UID", "SERVER_ID"],
-      "price": 58,
+      "price": 80,
       "imageSrc": "/products/mobile-legends/1.webp",
       "description": "Активация:игровойIDиServerID",
       "data": {
@@ -157,7 +157,8 @@
         "user_field": "UserID",
         "server_field": "ServerID",
         "category": 1,
-        "quantity": 1
+        "quantity": 1,
+        "rubCost": 52
       }
     },
     {
@@ -173,7 +174,8 @@
         "user_field": "UserID",
         "server_field": "ServerID",
         "category": 1,
-        "quantity": 1
+        "quantity": 1,
+        "rubCost": 52
       }
     },
     {
@@ -189,7 +191,8 @@
         "user_field": "UserID",
         "server_field": "ServerID",
         "category": 1,
-        "quantity": 1
+        "quantity": 1,
+        "rubCost": 52
       }
     },
     {
@@ -205,7 +208,8 @@
         "user_field": "UserID",
         "server_field": "ServerID",
         "category": 1,
-        "quantity": 1
+        "quantity": 1,
+        "rubCost": 52
       }
     },
     {
@@ -221,7 +225,8 @@
         "user_field": "UserID",
         "server_field": "ServerID",
         "category": 1,
-        "quantity": 1
+        "quantity": 1,
+        "rubCost": 52
       }
     },
     {
@@ -237,7 +242,8 @@
         "user_field": "UserID",
         "server_field": "ServerID",
         "category": 1,
-        "quantity": 1
+        "quantity": 1,
+        "rubCost": 52
       }
     },
     {
@@ -253,7 +259,8 @@
         "user_field": "UserID",
         "server_field": "ServerID",
         "category": 1,
-        "quantity": 1
+        "quantity": 1,
+        "rubCost": 52
       }
     },
     {
@@ -269,7 +276,8 @@
         "user_field": "UserID",
         "server_field": "ServerID",
         "category": 1,
-        "quantity": 1
+        "quantity": 1,
+        "rubCost": 52
       }
     },
     {
@@ -285,7 +293,8 @@
         "user_field": "UserID",
         "server_field": "ServerID",
         "category": 1,
-        "quantity": 1
+        "quantity": 1,
+        "rubCost": 52
       }
     }
   ]
