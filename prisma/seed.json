@@ -5,7 +5,7 @@
       "category": "pubg-mobile",
       "description": "Активация: Игровой ID",
       "credentials": ["UID"],
-      "price": 82,
+      "price": 99,
       "imageSrc": "/products/pubg-mobile/1.webp",
       "data": {
         "title": "60",
@@ -148,7 +148,7 @@
       "title": "35",
       "category": "mobile-legends",
       "credentials": ["UID", "SERVER_ID"],
-      "price": 80,
+      "price": 99,
       "imageSrc": "/products/mobile-legends/1.webp",
       "description": "Активация:игровойIDиServerID",
       "data": {
